@@ -1,11 +1,12 @@
 package cs112.ud2.models;
-
 public class Savings extends BankSystem {
 
     //Fields
     //private double savingsAmount;
     protected double savingsAmount = 0;
     protected double totalSavingsAmount = 0;
+
+    public static final double DEFAULT_SAVINGS_AMOUNT = 80;
 
     //Constructor
     //Full Constructor
@@ -19,11 +20,11 @@ public class Savings extends BankSystem {
 
     //Default Constructor
     /* Default Constructor */
-    /*
+
     public Savings() {
-        this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN, DEFAULT_SAVINGS_AMOUINT);
+        this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN, DEFAULT_ACCTYPE, DEFAULT_SAVINGS_AMOUNT);
     }
-        */
+
 
     //Setters
     public void setSavingsAmount(double savingsAmount) {
@@ -46,7 +47,7 @@ public class Savings extends BankSystem {
     //Other Methods
     @Override
     public String toString() {
-        return super.toString() + "Savings Total Amount: " + currency.format(savingsAmount) + "\nSavings Amount"
+        return super.toString() + "\nSavings Total Amount: " + currency.format(savingsAmount) + "\nSavings Amount"
                 + currency.format(totalSavingsAmount);
     }
 
@@ -119,7 +120,6 @@ public class Savings extends BankSystem {
         return totalSavingsAmount;
     }
         */
-
 
 
 

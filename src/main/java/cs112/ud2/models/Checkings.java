@@ -1,11 +1,13 @@
 package cs112.ud2.models;
 
-
 public class Checkings extends BankSystem {
     //Fields
 
     protected double checkingsAmount = 0;
     protected double totalCheckingsAmount = 0;
+
+    public static final double DEFAULT_CHECKINGSAMOUNT = 50;
+
 
     //Constructors
     //Full Constructor
@@ -17,11 +19,12 @@ public class Checkings extends BankSystem {
     }
 
     // Default Constructor
-    /*public Checkings() {
-        this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN,
+    public Checkings() {
+        this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN, DEFAULT_ACCTYPE,
                 DEFAULT_CHECKINGSAMOUNT);
     }
-                */
+
+    //Copy Constructor
 
     //Setters
     public void setCheckingsAmount(double checkingsAmount) {
@@ -44,7 +47,7 @@ public class Checkings extends BankSystem {
     //Other Methods
     @Override
     public String toString() {
-        return super.toString() + "Checkings Amount: " + currency.format(checkingsAmount) + "Total Checkings Amount"
+        return super.toString() + "\nCheckings Amount: " + currency.format(checkingsAmount) + "\nTotal Checkings Amount"
                 + currency.format(totalCheckingsAmount);
     }
 
@@ -127,6 +130,5 @@ public class Checkings extends BankSystem {
 
         }
             */
-
 
 
