@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.HomepageView">
+<VBox prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.CreateAccController">
    <children>
+      <Label text="Creating an Account..." />
+      <Label text="Please fill out the following: " />
+      <Label text="Name" />
+      <TextField fx:id="nameTextLabel" prefHeight="26.0" prefWidth="252.0" />
+      <Label text="Email" />
+      <TextField fx:id="emailTextField" />
+      <Label text="Date Of Birth" />
+      <TextField fx:id="dobTextField" />
+      <Label text="Password" />
+      <TextField fx:id="passwordTextField" />
+      <Label text="Address" />
+      <TextField fx:id="addresstextField" />
+      <Label text="SSN (last 4 digits)" />
+      <TextField fx:id="ssnTextField" />
+      <Button fx:id="continueButton" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
+
+
 
    </children>
 </VBox>

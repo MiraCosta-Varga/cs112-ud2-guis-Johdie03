@@ -25,10 +25,10 @@ public class MainController {
 
     @FXML
     protected void onCreateAccButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("createAcc-view.fxml"));
-        Scene homepageViewScene = new Scene(homepageView);
+        Parent createAccView =  FXMLLoader.load(MainApplication.class.getResource("createAcc-view.fxml"));
+        Scene createAccScene = new Scene(createAccView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(homepageViewScene);
+        window.setScene(createAccScene);
         window.show();
 
 
