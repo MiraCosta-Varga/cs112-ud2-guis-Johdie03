@@ -19,10 +19,13 @@ public class Checkings extends BankSystem {
     }
 
     // Default Constructor
+    /*
     public Checkings() {
         this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN, DEFAULT_ACCTYPE,
                 DEFAULT_CHECKINGSAMOUNT);
     }
+    */
+
 
     //Copy Constructor
 

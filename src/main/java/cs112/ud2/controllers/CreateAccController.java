@@ -1,5 +1,8 @@
 package cs112.ud2.controllers;
 
+import cs112.ud2.models.BankSystem;
+import cs112.ud2.models.Checkings;
+import cs112.ud2.models.Savings;
 import cs112.ud2.MainApplication;
 import cs112.ud2.models.BankSystem;
 import cs112.ud2.models.Checkings;
@@ -18,6 +21,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CreateAccController {
+    static BankSystem[] users = new BankSystem[50];
+    static int count = 0;
     @FXML
     private TextField nameTextLabel;
     @FXML
@@ -43,30 +48,22 @@ public class CreateAccController {
 
     //backButton
 
-    //onNameTextTyped
-
-    @FXML
-    protected void onNameTextTyped(ActionEvent actionEvent) throws IOException {
-        String name = nameTextLabel.getText();
-        Checkings checkingsAcc = new Checkings();
-        Savings savingsAcc = new Savings();
-        checkingsAcc.setName(name);
-        savingsAcc.setName(name);
-
-    }
 
     //onContinueButtonClicked
     @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
         String name = nameTextLabel.getText();
         String email = emailTextField.getText();
-        String dob = dobTextField.getText();
+        String birthday = dobTextField.getText();
         String password = passwordTextField.getText();
         String address = addressTextField.getText();
         int ssn = Integer.parseInt(ssnTextField.getText());
-        double checkings = Double.parseDouble(checkingsTextField.getText());
-        double savings = Double.parseDouble(savingsTextField.getText());
+        double checkingsAmount = Double.parseDouble(checkingsTextField.getText());
+        double savingsAmount = Double.parseDouble(savingsTextField.getText());
         String accType = accTypeTextField.getText();
+       users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
+               checkingsAmount);
+       users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
 
         Parent accCreatedView =  FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
         Scene accCreatedViewScene = new Scene(accCreatedView);
@@ -74,7 +71,16 @@ public class CreateAccController {
         window.setScene(accCreatedViewScene);
         window.show();
 
+        CreateAccController.setAll(users, name, email, birthday, password, address, ssn, checkingsAmount, savingsAmount, accType);
 
+        //TEST
+        /*
+        Checkings test1 = new Checkings(name, email, password, address, birthday, ssn, accType,
+                checkingsAmount);
+        Savings test2 = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
+        System.out.println (test1.toString());
+        System.out.println (test2.toString());
+*/
     }
 
     //onBackButtonClickedButton
@@ -87,5 +93,36 @@ public class CreateAccController {
         window.show();
 
     }
+
+    public static void setAll(BankSystem[] users, String name, String email, String birthday, String password, String address, int ssn, double checkingsAmount, double savingsAmount, String accType){
+//        users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
+//                checkingsAmount);
+//        users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
+        users[count - 2].setName(name);
+        users[count - 1].setName(name);
+
+        users[count - 2].setEmail(email);
+        users[count - 1].setEmail(email);
+
+        users[count - 2].setBirthday(birthday);
+        users[count - 1].setBirthday(birthday);
+
+        users[count - 2].setPassword(password);
+        users[count - 1].setPassword(password);
+
+        users[count - 2].setAddress(address);
+        users[count - 1].setAddress(address);
+
+        users[count - 2].setSsn(ssn);
+        users[count - 1].setSsn(ssn);
+
+        ((Checkings) users[count - 2]).setCheckingsAmount(checkingsAmount);
+        ((Savings) users[count - 1]).setSavingsAmount(savingsAmount);
+
+        users[count - 2].setAccType(accType);
+        users[count - 1].setAccType(accType);
+
+    }
+
 
 }

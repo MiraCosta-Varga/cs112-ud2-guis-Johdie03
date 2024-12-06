@@ -20,11 +20,11 @@ public class Savings extends BankSystem {
 
     //Default Constructor
     /* Default Constructor */
-
+/*
     public Savings() {
         this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN, DEFAULT_ACCTYPE, DEFAULT_SAVINGS_AMOUNT);
     }
-
+*/
 
     //Setters
     public void setSavingsAmount(double savingsAmount) {
