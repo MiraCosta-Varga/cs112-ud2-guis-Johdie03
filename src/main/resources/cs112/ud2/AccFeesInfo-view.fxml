@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.AccFeesInfoController">
+   <children>
+      <Button fx:id="continueButton" layoutX="118.0" layoutY="144.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="continue" />
+      <Label prefHeight="36.0" prefWidth="300.0" text="          Monthly Fees Information" wrapText="true">
+         <font>
+            <Font name="System Font" size="20.0" />
+         </font></Label>
+      <Label layoutX="46.0" layoutY="53.0" text="Student Account Monthly Fees: $0.99" />
+      <Label layoutX="44.0" layoutY="100.0" text="Business Account Monthly Fees: $7.99" />
+      <Label layoutX="47.0" layoutY="76.0" text="Regular Account Monthly Fees: $4.99" />
 
 
-<VBox prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.AccFeesInfoView">
-
-</VBox>
+   </children>
+</AnchorPane>

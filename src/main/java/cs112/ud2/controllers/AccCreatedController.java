@@ -12,10 +12,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AccFeesInfoController {
+public class AccCreatedController {
     @FXML
     private Button continueButton;
 
+    //onContinueButtonClicked
     @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
         Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));

@@ -32,6 +32,8 @@ public class MainController {
         window.show();
 
 
+
+
     }
 
     //onFeesinfoButtonClicked

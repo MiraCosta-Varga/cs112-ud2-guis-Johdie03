@@ -2,11 +2,18 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.CreateAccController">
    <children>
-      <Label text="Creating an Account..." />
-      <Label text="Please fill out the following: " />
+      <Label text="Creating an Account...">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label text="Please fill out the following: ">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
       <Label text="Name" />
       <TextField fx:id="nameTextLabel" prefHeight="26.0" prefWidth="252.0" />
       <Label text="Email" />
@@ -16,10 +23,18 @@
       <Label text="Password" />
       <TextField fx:id="passwordTextField" />
       <Label text="Address" />
-      <TextField fx:id="addresstextField" />
+      <TextField fx:id="addressTextField" />
       <Label text="SSN (last 4 digits)" />
       <TextField fx:id="ssnTextField" />
+      <Label text="Checkings $" />
+      <TextField fx:id="checkingsTextField" />
+      <Label text="Savings $" />
+      <TextField fx:id="savingsTextField" />
+      <Label text="Type Of Account" />
+      <TextField fx:id="accTypeTextField" />
+
       <Button fx:id="continueButton" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClickedButton" text="Back" />
 
 
 
