@@ -1,5 +1,9 @@
 package cs112.ud2.controllers;
 
+
+import cs112.ud2.models.BankSystem;
+import cs112.ud2.models.Checkings;
+import cs112.ud2.models.Savings;
 import cs112.ud2.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,10 +28,10 @@ public class DepositMoneyController {
     //change parent view to checkingsDepositView once ready
     @FXML
     protected void onCheckingsDepositButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent checkingsDepositView =  FXMLLoader.load(MainApplication.class.getResource("checkingsDeposit-view.fxml"));
+        Scene checkingsDepositViewScene = new Scene(checkingsDepositView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(checkingsDepositViewScene);
         window.show();
     }
 
@@ -52,6 +56,8 @@ public class DepositMoneyController {
         window.show();
 
     }
+
+
 
 
 }

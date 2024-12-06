@@ -1,5 +1,9 @@
 package cs112.ud2.controllers;
 
+
+import cs112.ud2.models.BankSystem;
+import cs112.ud2.models.Checkings;
+import cs112.ud2.models.Savings;
 import cs112.ud2.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +16,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static cs112.ud2.controllers.CreateAccController.count;
+import static cs112.ud2.controllers.CreateAccController.users;
 
 public class checkingsDepositController {
     @FXML
@@ -30,6 +37,22 @@ public class checkingsDepositController {
     //onContinueButtonClicked
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
         double checkingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
+        checkingsDeposit(checkingsDepositAmount);
 
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(homepageViewScene);
+        window.show();
+
+        //TEST
+        System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
+
+    }
+
+    public void checkingsDeposit(double checkingsDepositAmount) {
+      double totalCheckingsAmount=  ((Checkings) users[count - 2]).getTotalCheckingsAmount();
+      totalCheckingsAmount += checkingsDepositAmount;
+      ((Checkings) users[count - 2]).setTotalCheckingsAmount(totalCheckingsAmount);
     }
 }
