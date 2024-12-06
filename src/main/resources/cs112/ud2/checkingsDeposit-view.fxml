@@ -18,6 +18,6 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="continueButton" layoutX="115.0" layoutY="219.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Button" />
+      <Button fx:id="continueButton" layoutX="115.0" layoutY="219.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
    </children>
 </AnchorPane>

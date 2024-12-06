@@ -35,6 +35,7 @@ public class checkingsDepositController {
     }
 
     //onContinueButtonClicked
+    @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
         double checkingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
         checkingsDeposit(checkingsDepositAmount);
