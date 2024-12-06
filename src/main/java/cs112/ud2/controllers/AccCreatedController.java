@@ -17,12 +17,13 @@ public class AccCreatedController {
     private Button continueButton;
 
     //onContinueButtonClicked
+    //change to homepage view not main once homepage is completed
     @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(homepageViewScene);
         window.show();
 
     }

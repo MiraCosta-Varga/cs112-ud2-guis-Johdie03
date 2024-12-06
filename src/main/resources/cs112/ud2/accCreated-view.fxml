@@ -6,11 +6,11 @@
 
 <AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.AccCreatedController">
    <children>
-      <Label layoutX="29.0" layoutY="66.0" text="ACCOUNT CREATED!">
+      <Label layoutX="29.0" layoutY="46.0" text="ACCOUNT CREATED!">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="continueButton" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" textAlignment="CENTER" />
+      <Button fx:id="continueButton" layoutX="67.0" layoutY="85.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" textAlignment="CENTER" />
    </children>
 </AnchorPane>
