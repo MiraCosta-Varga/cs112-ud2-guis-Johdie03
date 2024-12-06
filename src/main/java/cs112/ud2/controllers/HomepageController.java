@@ -25,30 +25,30 @@ public class HomepageController {
 
     @FXML
     protected void onDepositButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent depositMoneyView =  FXMLLoader.load(MainApplication.class.getResource("depositMoney-view.fxml"));
+        Scene depositMoneyViewScene = new Scene(depositMoneyView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(depositMoneyViewScene);
         window.show();
 
     }
 
     @FXML
     protected void onWithdrawButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent withdrawMoneyView =  FXMLLoader.load(MainApplication.class.getResource("withdrawMoney-view.fxml"));
+        Scene withdrawMoneyViewScene = new Scene(withdrawMoneyView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(withdrawMoneyViewScene);
         window.show();
 
     }
 
     @FXML
     protected void onTransferButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent transferMoneyView =  FXMLLoader.load(MainApplication.class.getResource("transferMoney-view.fxml"));
+        Scene transferMoneyViewScene = new Scene(transferMoneyView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(transferMoneyViewScene);
         window.show();
 
     }

@@ -12,35 +12,34 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WithdrawMoneyController {
+public class TransferMoneyController {
     @FXML
-    private Button checkingsWithdrawButton;
+    private Button checkingsToSavingsTransferButton;
     @FXML
-    private Button savingsWithdrawButton;
-    @FXML
-    private Button homepageButton;
+    private Button savingsToCheckingsTransferButton;
 
-    //change parent view to checkings withdraw view once ready
+    //onCheckingsToSavingsTransferButtonClicked
     @FXML
-    protected void onCheckingsWithdrawButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+    protected void onCheckingsToSavingsTransferButtonClicked(ActionEvent actionEvent) throws IOException {
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(homepageViewScene);
         window.show();
+
+    }
+    //onSavingsToCheckingsTransferButtonClicked
+    @FXML
+    protected void onSavingsToCheckingsTransferButtonClicked(ActionEvent actionEvent) throws IOException {
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(homepageViewScene);
+        window.show();
+
     }
 
-    //change parent view to savings withdraw view once ready
-    @FXML
-    protected void onSavingsWithdrawButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
-        window.show();
-    }
-
-
+    //onHomepageButtonClicked
     @FXML
     protected void onHomepageButtonClicked(ActionEvent actionEvent) throws IOException {
         Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));

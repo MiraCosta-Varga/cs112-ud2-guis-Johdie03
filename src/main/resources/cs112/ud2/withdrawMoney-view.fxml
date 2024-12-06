@@ -10,7 +10,8 @@
            <font>
                <Font name="System Bold" size="12.0" />
            </font></Label>
-       <Button fx:id="savingsWithdrawButton" layoutX="122.0" layoutY="188.0" mnemonicParsing="false" onAction="#onSavingsWithdrawButtonClicked" text="Savings" />
-       <Button fx:id="checkingsWithdrawButton" layoutX="115.0" layoutY="137.0" mnemonicParsing="false" onAction="#onCheckingsWithdrawButtonClicked" text="Checkings" />
+       <Button fx:id="savingsWithdrawButton" layoutX="121.0" layoutY="180.0" mnemonicParsing="false" onAction="#onSavingsWithdrawButtonClicked" text="Savings" />
+       <Button fx:id="checkingsWithdrawButton" layoutX="114.0" layoutY="124.0" mnemonicParsing="false" onAction="#onCheckingsWithdrawButtonClicked" text="Checkings" />
+      <Button fx:id="homepageButton" layoutX="97.0" layoutY="249.0" mnemonicParsing="false" onAction="#onHomepageButtonClicked" text="Go to Homepage" />
    </children>
 </AnchorPane>

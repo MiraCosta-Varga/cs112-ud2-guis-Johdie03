@@ -10,8 +10,9 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Button fx:id="savingsDepositButton" layoutX="122.0" layoutY="188.0" mnemonicParsing="false" onAction="#onSavingsDepositButtonClicked" text="Savings" />
+      <Button fx:id="savingsDepositButton" layoutX="122.0" layoutY="174.0" mnemonicParsing="false" onAction="#onSavingsDepositButtonClicked" text="Savings" />
       <Button fx:id="checkingsDepositButton" layoutX="115.0" layoutY="137.0" mnemonicParsing="false" onAction="#onCheckingsDepositButtonClicked" text="Checkings" />
+      <Button fx:id="homepageButton" layoutX="102.0" layoutY="249.0" mnemonicParsing="false" onAction="#onHomepageButtonClicked" text="Go to Homepage" />
 
    </children>
 </AnchorPane>

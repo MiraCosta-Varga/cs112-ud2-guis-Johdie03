@@ -16,9 +16,10 @@ public class DepositMoneyController {
 
     @FXML
     private Button checkingsDepositButton;
-
     @FXML
     private Button savingsDepositButton;
+    @FXML
+    private Button homepageButton;
 
     //change parent view to checkingsDepositView once ready
     @FXML
@@ -41,6 +42,16 @@ public class DepositMoneyController {
 
     }
 
+    //onHomepageButtonClicked
+    @FXML
+    protected void onHomepageButtonClicked(ActionEvent actionEvent) throws IOException {
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(homepageViewScene);
+        window.show();
+
+    }
 
 
 }
