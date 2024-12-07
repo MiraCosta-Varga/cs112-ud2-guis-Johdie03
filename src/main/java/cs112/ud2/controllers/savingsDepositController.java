@@ -47,7 +47,7 @@ public class savingsDepositController {
         savingsDeposit(savingsDepositAmount);
 
         //TEST
-        System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
+        //System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
 
     }
 
@@ -69,7 +69,7 @@ public class savingsDepositController {
 
 
         //TEST
-        System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
+        //System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
 
     }
 
@@ -85,6 +85,6 @@ public class savingsDepositController {
     public void savingsDeposit(double savingsDepositAmount) {
         double totalSavingsAmount=  ((Savings) users[count - 1]).getTotalSavingsAmount();
         totalSavingsAmount += savingsDepositAmount;
-        ((Savings) users[count - 1]).setTotalSavings(totalSavingsAmount);
+        ((Savings) users[count - 1]).setTotalSavingsAmount(totalSavingsAmount);
     }
 }

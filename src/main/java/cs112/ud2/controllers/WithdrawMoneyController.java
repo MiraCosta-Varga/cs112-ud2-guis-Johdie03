@@ -33,7 +33,7 @@ public class WithdrawMoneyController {
     //change parent view to savings withdraw view once ready
     @FXML
     protected void onSavingsWithdrawButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
+        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("savingsWithdraw-view.fxml"));
         Scene mainViewScene = new Scene(mainView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(mainViewScene);

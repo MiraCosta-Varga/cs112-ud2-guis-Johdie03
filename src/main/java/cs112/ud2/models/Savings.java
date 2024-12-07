@@ -31,7 +31,7 @@ public class Savings extends BankSystem {
         this.savingsAmount = savingsAmount;
     }
 
-    public void setTotalSavings(double totalSavingsAmount) {
+    public void setTotalSavingsAmount(double totalSavingsAmount) {
         this.totalSavingsAmount = totalSavingsAmount;
     }
 

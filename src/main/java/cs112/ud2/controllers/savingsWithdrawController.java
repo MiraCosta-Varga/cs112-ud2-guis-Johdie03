@@ -1,8 +1,8 @@
 package cs112.ud2.controllers;
 
-
 import cs112.ud2.MainApplication;
 import cs112.ud2.models.Checkings;
+import cs112.ud2.models.Savings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +17,8 @@ import java.io.IOException;
 import static cs112.ud2.controllers.CreateAccController.count;
 import static cs112.ud2.controllers.CreateAccController.users;
 
-public class checkingsWithdrawController {
+public class savingsWithdrawController {
+
     @FXML
     private TextField withdrawAmountTextField;
 
@@ -33,13 +34,13 @@ public class checkingsWithdrawController {
         }catch (NullPointerException e){
             System.err.println ("Error: " + e.getMessage());
         }
-        double checkingsWithdrawAmount = Double.parseDouble(withdrawAmountTextField.getText());
-        checkingsWithdraw(checkingsWithdrawAmount);
+        double savingsWithdrawAmount = Double.parseDouble(withdrawAmountTextField.getText());
+        savingsWithdraw(savingsWithdrawAmount);
 
 
 
         //TEST
-        //System.out.println ("Current Total Checkings Amount after Withdraw: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
+        //System.out.println ("Current Total Savings Amount after Withdraw: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
 
     }
 
@@ -56,14 +57,16 @@ public class checkingsWithdrawController {
         }catch (NullPointerException e){
             System.err.println ("Error: " + e.getMessage());
         }
-        double checkingsWithdrawAmount = Double.parseDouble(withdrawAmountTextField.getText());
-        checkingsWithdraw(checkingsWithdrawAmount);
-
+        double savingsWithdrawAmount = Double.parseDouble(withdrawAmountTextField.getText());
+        savingsWithdraw(savingsWithdrawAmount);
 
 
         //TEST
-        //System.out.println ("Current Total Checkings Amount after Withdraw: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
+        //System.out.println ("Current Total Savings Amount after Withdraw: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
     }
+
+
+
 
     @FXML
     protected void onBackButtonClicked(ActionEvent actionEvent) throws IOException {
@@ -74,10 +77,11 @@ public class checkingsWithdrawController {
         window.show();
     }
 
-    public void checkingsWithdraw(double checkingsWithdrawAmount) {
-        double totalCheckingsAmount = ((Checkings) users[count - 2]).getTotalCheckingsAmount();
-        totalCheckingsAmount -= checkingsWithdrawAmount;
-        ((Checkings) users[count - 2]).setTotalCheckingsAmount(totalCheckingsAmount);
+
+    public void savingsWithdraw(double savingsWithdrawAmount) {
+        double totalSavingsAmount = ((Savings) users[count - 1]).getTotalSavingsAmount();
+        totalSavingsAmount -= savingsWithdrawAmount;
+        ((Savings) users[count - 1]).setTotalSavingsAmount(totalSavingsAmount);
 
     }
 }
