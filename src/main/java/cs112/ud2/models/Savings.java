@@ -47,8 +47,9 @@ public class Savings extends BankSystem {
     //Other Methods
     @Override
     public String toString() {
-        return super.toString() + "\nSavings Total Amount: " + currency.format(savingsAmount) + "\nSavings Amount"
-                + currency.format(totalSavingsAmount);
+        return super.toString() + "\nSavings Total Amount: " + currency.format(totalSavingsAmount);
+        //        return super.toString() + "\nSavings Total Amount: " + currency.format(savingsAmount) + "\nSavings Amount"
+        //                + currency.format(totalSavingsAmount);
     }
 
     @Override

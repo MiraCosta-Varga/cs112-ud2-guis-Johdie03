@@ -50,8 +50,10 @@ public class Checkings extends BankSystem {
     //Other Methods
     @Override
     public String toString() {
-        return super.toString() + "\nCheckings Amount: " + currency.format(checkingsAmount) + "\nTotal Checkings Amount"
-                + currency.format(totalCheckingsAmount);
+        return super.toString() + "\nTotal Checkings Amount" + currency.format(totalCheckingsAmount);
+
+//        return super.toString() + "\nCheckings Amount: " + currency.format(checkingsAmount) + "\nTotal Checkings Amount"
+//                + currency.format(totalCheckingsAmount);
     }
 
     @Override
