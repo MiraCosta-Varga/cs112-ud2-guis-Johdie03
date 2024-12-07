@@ -25,30 +25,48 @@ public class savingsDepositController {
     //onSavingsAmountTyped
     @FXML
     protected void onDepositAmountTyped(ActionEvent actionEvent) throws IOException{
+        try {
+            Parent depositSuccessfulView = FXMLLoader.load(MainApplication.class.getResource("depositSuccessful-view.fxml"));
+            Scene depositSuccessfulViewScene = new Scene(depositSuccessfulView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(depositSuccessfulViewScene);
+            window.show();
+
+       /* Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
+        Scene mainViewScene = new Scene(mainView);
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(mainViewScene);
+        window.show(); */
+
+        } catch (NullPointerException e){
+            System.out.println ("Error" + e.getMessage());
+
+        }
+
         double savingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
         savingsDeposit(savingsDepositAmount);
 
-        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
-        Scene homepageViewScene = new Scene(homepageView);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(homepageViewScene);
-        window.show();
-
         //TEST
-        System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 2]).getTotalSavingsAmount());
+        System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
 
     }
 
     @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
+        try {
+            Parent depositSuccessfulView = FXMLLoader.load(MainApplication.class.getResource("depositSuccessful-view.fxml"));
+            Scene depositSuccessfulViewScene = new Scene(depositSuccessfulView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(depositSuccessfulViewScene);
+            window.show();
+
+        }catch (NullPointerException e){
+            System.err.println ("Error" + e.getMessage());
+        }
+
         double savingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
         savingsDeposit(savingsDepositAmount);
 
-        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
-        Scene homepageViewScene = new Scene(homepageView);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(homepageViewScene);
-        window.show();
 
         //TEST
         System.out.println ("Current Total Savings Amount after Deposit: " + ((Savings) users[count - 1]).getTotalSavingsAmount());
