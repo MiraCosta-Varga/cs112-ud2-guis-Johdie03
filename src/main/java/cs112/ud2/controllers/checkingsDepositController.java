@@ -48,7 +48,7 @@ public class checkingsDepositController {
 
 
         //TEST
-        System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
+        //System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
     }
 
 
@@ -71,8 +71,8 @@ public class checkingsDepositController {
 
 
         //TEST
-        System.out.println(getClass().getResource("depositSuccessful-view.fxml"));
-        System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
+        //System.out.println(getClass().getResource("depositSuccessful-view.fxml"));
+        //System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
 
     }
 
