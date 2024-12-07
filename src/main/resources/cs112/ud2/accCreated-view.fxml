@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="150.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.AccCreatedController">
+   <children>
+      <Label layoutX="19.0" layoutY="39.0" text="ACCOUNT CREATION SUCCESSFUL!">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="continueButton" layoutX="92.0" layoutY="75.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
