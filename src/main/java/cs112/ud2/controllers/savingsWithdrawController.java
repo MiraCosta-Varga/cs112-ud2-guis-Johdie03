@@ -78,7 +78,7 @@ public class savingsWithdrawController {
     }
 
 
-    public void savingsWithdraw(double savingsWithdrawAmount) {
+    public static void savingsWithdraw(double savingsWithdrawAmount) {
         double totalSavingsAmount = ((Savings) users[count - 1]).getTotalSavingsAmount();
         totalSavingsAmount -= savingsWithdrawAmount;
         ((Savings) users[count - 1]).setTotalSavingsAmount(totalSavingsAmount);

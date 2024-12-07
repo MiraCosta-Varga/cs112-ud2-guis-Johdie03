@@ -84,7 +84,7 @@ public class checkingsDepositController {
     }
 
 
-    public void checkingsDeposit(double checkingsDepositAmount) {
+    public static void checkingsDeposit(double checkingsDepositAmount) {
       double totalCheckingsAmount=  ((Checkings) users[count - 2]).getTotalCheckingsAmount();
       totalCheckingsAmount += checkingsDepositAmount;
       ((Checkings) users[count - 2]).setTotalCheckingsAmount(totalCheckingsAmount);

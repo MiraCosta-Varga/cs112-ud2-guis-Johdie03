@@ -31,7 +31,7 @@ public class TransferMoneyController {
     //onSavingsToCheckingsTransferButtonClicked
     @FXML
     protected void onSavingsToCheckingsTransferButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("savingsToCheckingsTransfer-view.fxml"));
         Scene homepageViewScene = new Scene(homepageView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(homepageViewScene);
