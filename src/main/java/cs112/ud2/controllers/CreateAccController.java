@@ -74,13 +74,13 @@ public class CreateAccController {
         CreateAccController.setAll(users, name, email, birthday, password, address, ssn, checkingsAmount, savingsAmount, accType);
 
         //TEST
-        /*
+
         Checkings test1 = new Checkings(name, email, password, address, birthday, ssn, accType,
                 checkingsAmount);
         Savings test2 = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
         System.out.println (test1.toString());
         System.out.println (test2.toString());
-*/
+
     }
 
     //onBackButtonClickedButton

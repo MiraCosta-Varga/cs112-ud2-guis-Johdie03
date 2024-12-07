@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.savingsDepositController">
+   <children>
+      <Label layoutX="54.0" layoutY="154.0" text="\$">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="127.0" text="Please enter amount you are depositing" />
+      <TextField fx:id="depositAmountTextField" layoutX="70.0" layoutY="150.0" onAction="#onDepositAmountTyped" />
+      <Label layoutX="81.0" layoutY="69.0" text="Depositing to Savings">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Button fx:id="continueButton" layoutX="116.0" layoutY="204.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
+      <Button fx:id="backButton" layoutX="128.0" layoutY="242.0" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" />
+   </children>
+</AnchorPane>

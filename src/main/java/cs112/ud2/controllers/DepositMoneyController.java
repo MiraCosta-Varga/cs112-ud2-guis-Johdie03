@@ -38,10 +38,10 @@ public class DepositMoneyController {
     //change parent view to savingsDepositView  once ready
     @FXML
     protected void onSavingsDepositButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent savingsDepositView =  FXMLLoader.load(MainApplication.class.getResource("savingsDeposit-view.fxml"));
+        Scene savingsDepositViewScene = new Scene(savingsDepositView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(savingsDepositViewScene);
         window.show();
 
     }
