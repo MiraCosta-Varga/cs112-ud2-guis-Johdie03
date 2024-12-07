@@ -6,5 +6,6 @@ Feel free to edit this file to contain a description of your project, as well as
 Use [Markdown](https://gist.github.com/cuonggt/9b7d08a597b167299f0d) to format appropriately.
 
 ## GUI Wireframe
-
-Place your wireframe image(s) here!
+GUI Wireframe Images
+![Wireframe Image 1](./main/resources/images/UD2-Wireframe-1.jpg)
+![Wireframe Image 1](./main/resources/images/UD2-Wireframe-2.jpg)
