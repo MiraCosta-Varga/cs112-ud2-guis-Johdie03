@@ -23,10 +23,10 @@ public class WithdrawMoneyController {
     //change parent view to checkings withdraw view once ready
     @FXML
     protected void onCheckingsWithdrawButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent checkingsWithdrawView =  FXMLLoader.load(MainApplication.class.getResource("checkingsWithdraw-view.fxml"));
+        Scene checkingsWithdrawViewScene = new Scene(checkingsWithdrawView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(checkingsWithdrawViewScene);
         window.show();
     }
 
