@@ -39,7 +39,7 @@ public class savingsDepositController {
         window.show(); */
 
         } catch (NullPointerException e){
-            System.out.println ("Error" + e.getMessage());
+            System.out.println ("Error: " + e.getMessage());
 
         }
 
@@ -61,7 +61,7 @@ public class savingsDepositController {
             window.show();
 
         }catch (NullPointerException e){
-            System.err.println ("Error" + e.getMessage());
+            System.err.println ("Error: " + e.getMessage());
         }
 
         double savingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());

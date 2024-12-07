@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="150.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.DepositSuccessfulController">
+<AnchorPane prefHeight="150.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.depositSuccessfulController">
    <children>
       <Label layoutX="63.0" layoutY="44.0" text="Deposit Successful!">
          <font>

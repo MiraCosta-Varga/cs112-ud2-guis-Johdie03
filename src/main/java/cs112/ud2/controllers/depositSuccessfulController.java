@@ -7,26 +7,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 
 import java.io.IOException;
 
-public class DepositSuccessfulController {
+public class depositSuccessfulController {
 
-@FXML
-private Button continueButton;
     //onContinueButtonClicked
-
     @FXML
     protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
-        Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
+        Parent homepageView =  FXMLLoader.load(MainApplication.class.getResource("homepage-view.fxml"));
+        Scene homepageViewScene = new Scene(homepageView);
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
+        window.setScene(homepageViewScene);
         window.show();
-
     }
+
 
 }

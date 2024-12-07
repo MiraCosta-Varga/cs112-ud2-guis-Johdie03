@@ -27,10 +27,10 @@ public class checkingsDepositController {
     @FXML
     protected void onDepositAmountTyped(ActionEvent actionEvent) throws IOException {
         try {
-            Parent depositSuccessfullView = FXMLLoader.load(MainApplication.class.getResource("depositSuccessful-view.fxml"));
-            Scene depositSuccessfullViewScene = new Scene(depositSuccessfullView);
+            Parent depositSuccessfulView = FXMLLoader.load(MainApplication.class.getResource("depositSuccessful-view.fxml"));
+            Scene depositSuccessfulViewScene = new Scene(depositSuccessfulView);
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            window.setScene(depositSuccessfullViewScene);
+            window.setScene(depositSuccessfulViewScene);
             window.show();
 
        /* Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
@@ -40,7 +40,7 @@ public class checkingsDepositController {
         window.show(); */
 
         } catch (NullPointerException e){
-            System.err.println ("Error" + e.getMessage());
+            System.err.println ("Error: " + e.getMessage());
 
         }
         double checkingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
@@ -63,7 +63,7 @@ public class checkingsDepositController {
             window.show();
 
         }catch (NullPointerException e){
-            System.err.println ("Error" + e.getMessage());
+            System.err.println ("Error: " + e.getMessage());
         }
         double checkingsDepositAmount = Double.parseDouble(depositAmountTextField.getText());
         checkingsDeposit(checkingsDepositAmount);
@@ -71,6 +71,7 @@ public class checkingsDepositController {
 
 
         //TEST
+        System.out.println(getClass().getResource("depositSuccessful-view.fxml"));
         System.out.println ("Current Total Checkings Amount after Deposit: " + ((Checkings) users[count - 2]).getTotalCheckingsAmount());
 
     }
