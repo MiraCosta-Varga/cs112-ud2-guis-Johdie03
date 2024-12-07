@@ -40,13 +40,13 @@ public abstract class BankSystem {
 
     /***  Constructor Methods ***/
     /* Default Constructor */
-    /*
+
     public BankSystem() {
         this(DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_ADDRESS, DEFAULT_BIRTHDAY, DEFAULT_SSN,
                 DEFAULT_ACCTYPE);
     }
 
-     */
+
 
     /* Full Constructor */
     public BankSystem(String name, String email, String password, String address, String birthday, int ssn,
@@ -202,12 +202,6 @@ public abstract class BankSystem {
 
     }
 
-    //calculate age method
-    /*public static int age(Date birthday) {
-        LocalDate currentDate = LocalDate.now();
-
-    }
-        */
 
     /*
     //OTHER METHODS

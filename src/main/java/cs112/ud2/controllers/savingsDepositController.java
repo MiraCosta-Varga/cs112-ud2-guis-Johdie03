@@ -82,7 +82,7 @@ public class savingsDepositController {
         window.show();
     }
 
-    public void savingsDeposit(double savingsDepositAmount) {
+    public static void savingsDeposit(double savingsDepositAmount) {
         double totalSavingsAmount=  ((Savings) users[count - 1]).getTotalSavingsAmount();
         totalSavingsAmount += savingsDepositAmount;
         ((Savings) users[count - 1]).setTotalSavingsAmount(totalSavingsAmount);

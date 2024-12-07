@@ -6,14 +6,14 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.checkingsDepositController">
    <children>
-      <Label layoutX="43.0" layoutY="142.0" text="Please enter amount you are depositing" />
+      <Label layoutX="43.0" layoutY="117.0" text="Please enter amount you are depositing" />
       <Label layoutX="73.0" layoutY="62.0" text="Depositing to Checkings">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="depositAmountTextField" layoutX="73.0" layoutY="161.0" onAction="#onDepositAmountTyped" prefHeight="26.0" prefWidth="138.0" />
-      <Label layoutX="57.0" layoutY="165.0" text="\$">
+      <TextField fx:id="depositAmountTextField" layoutX="76.0" layoutY="137.0" onAction="#onDepositAmountTyped" prefHeight="26.0" prefWidth="138.0" />
+      <Label layoutX="57.0" layoutY="141.0" text="\$">
          <font>
             <Font size="15.0" />
          </font>

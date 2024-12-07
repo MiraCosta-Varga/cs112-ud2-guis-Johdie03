@@ -74,7 +74,7 @@ public class checkingsWithdrawController {
         window.show();
     }
 
-    public void checkingsWithdraw(double checkingsWithdrawAmount) {
+    public static void checkingsWithdraw(double checkingsWithdrawAmount) {
         double totalCheckingsAmount = ((Checkings) users[count - 2]).getTotalCheckingsAmount();
         totalCheckingsAmount -= checkingsWithdrawAmount;
         ((Checkings) users[count - 2]).setTotalCheckingsAmount(totalCheckingsAmount);

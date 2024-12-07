@@ -33,11 +33,6 @@ public class checkingsDepositController {
             window.setScene(depositSuccessfulViewScene);
             window.show();
 
-       /* Parent mainView =  FXMLLoader.load(MainApplication.class.getResource("main-view.fxml"));
-        Scene mainViewScene = new Scene(mainView);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainViewScene);
-        window.show(); */
 
         } catch (NullPointerException e){
             System.err.println ("Error: " + e.getMessage());
