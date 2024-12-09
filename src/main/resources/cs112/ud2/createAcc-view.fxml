@@ -30,7 +30,7 @@
       <TextField fx:id="checkingsTextField" />
       <Label text="Savings $" />
       <TextField fx:id="savingsTextField" />
-      <Label text="Type Of Account" />
+      <Label text="Type Of Account (Student, Business, or Regular)" />
       <TextField fx:id="accTypeTextField" />
 
       <Button fx:id="continueButton" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
