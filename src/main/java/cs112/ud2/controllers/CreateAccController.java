@@ -148,7 +148,7 @@ public class CreateAccController {
 
     //current date set to 12/30/24
     //subtring birthday for month, day, and year
-    public static int age(String birthday) {
+    public static int age(String birthday) { //age calculation
         int YEAR = 2024;
         int MONTH =12;
         //10/03/2006
