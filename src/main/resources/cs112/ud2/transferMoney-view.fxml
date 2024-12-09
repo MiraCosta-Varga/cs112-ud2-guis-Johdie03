@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.TransferMoneyController">
+   <children>
+      <Label layoutX="20.0" layoutY="52.0" text="How would you like to transfer?">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Button fx:id="checkingsToSavingsTransferButton" layoutX="68.0" layoutY="104.0" mnemonicParsing="false" onAction="#onCheckingsToSavingsTransferButtonClicked" text="from Checkings to Savings" />
+      <Button fx:id="savingsToCheckingsTransferButton" layoutX="68.0" layoutY="150.0" mnemonicParsing="false" onAction="#onSavingsToCheckingsTransferButtonClicked" text="from Savings to Checkings" />
+      <Button fx:id="homepageButton" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" onAction="#onHomepageButtonClicked" text="Go to Homepage" />
+   </children>
+</AnchorPane>
