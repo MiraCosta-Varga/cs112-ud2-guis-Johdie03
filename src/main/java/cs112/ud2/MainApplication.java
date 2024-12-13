@@ -1,5 +1,6 @@
 package cs112.ud2;
 
+import cs112.ud2.controllers.ErrorWindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,4 +28,6 @@ public class MainApplication extends Application {
 
         launch();
     }
+
+
 }

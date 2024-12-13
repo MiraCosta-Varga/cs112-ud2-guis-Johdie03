@@ -57,17 +57,47 @@ public class CreateAccController {
         String birthday = dobTextField.getText();
         String password = passwordTextField.getText();
         String address = addressTextField.getText();
-        int ssn = Integer.parseInt(ssnTextField.getText());
+        String ssnText = ssnTextField.getText();
+        //only accept int
+        //int ssn = Integer.parseInt(ssnTextField.getText());
+        int TempSsn = 0;
+        int ssn = 0;
+        try {
+            TempSsn = Integer.parseInt(ssnText);
+            if (ssnText.length() != 4) {
+                throw new IllegalArgumentException("Please only enter your last 4 digits of your SSN");
+                /*
+                Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
+                Scene accCreatedViewScene = new Scene(accCreatedView);
+                Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window.setScene(accCreatedViewScene);
+                window.show();
+                */
+
+            }
+            System.out.println("Valid SSN: " + TempSsn);
+
+        } catch (NumberFormatException ex) {
+            System.out.println("ERROR: Please only enter integers" + ex.getMessage());
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+
+        }
         double checkingsAmount = Double.parseDouble(checkingsTextField.getText());
         double savingsAmount = Double.parseDouble(savingsTextField.getText());
         String accType = accTypeTextField.getText();
-       users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
-               checkingsAmount);
-       users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
+        users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
+                checkingsAmount);
+        users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
 
-        Parent accCreatedView =  FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
+        users[count - 2].setSsn(TempSsn);
+        users[count - 1].setSsn(TempSsn);
+        System.out.println(users[count - 2].getSsn() + "\n" + users[count - 1].getSsn());
+
+
+        Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
         Scene accCreatedViewScene = new Scene(accCreatedView);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         window.setScene(accCreatedViewScene);
         window.show();
 
@@ -94,6 +124,25 @@ public class CreateAccController {
         window.show();
 
     }
+
+    /*
+    public void errorMessages(String error){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("errorWindow-view.fxml"));
+            Scene scene = new Scene(loader.load());
+            ErrorWindowController controller = loader.getController();
+            controller.setErrorMessage(error);
+
+            Stage window = new Stage();
+            window.setTitle("Error");
+            window.setScene(scene);
+            window.show();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    */
+
 
     public static String setAll(BankSystem[] users, String name, String email, String birthday, String password, String address, int ssn, double checkingsAmount, double savingsAmount, String accType){
 //        users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
@@ -122,18 +171,9 @@ public class CreateAccController {
         users[count - 1].setAddress(address);
         //exception (4 digits only and must be INT)
 
-        if (!BankSystem.validSsn(ssn)){
-        System.out.println ("ERROR: Invalid SSN digits, please only enter last 4 digits of Social Security Number");
-        } else {
-            try{
-                int ssnNumber = scanner.nextInt();
-                throw new InputMismatchException("Please enter only integers");
-            } catch (InputMismatchException e){
-                e.getMessage();
-            }
-            users[count - 2].setSsn(ssn);
-            users[count - 1].setSsn(ssn);
-        }
+        users[count - 2].setSsn(ssn);
+        users[count - 1].setSsn(ssn);
+
         /*
         boolean invalidSsn = false, validSsn = false;
         while (invalidSsn){
