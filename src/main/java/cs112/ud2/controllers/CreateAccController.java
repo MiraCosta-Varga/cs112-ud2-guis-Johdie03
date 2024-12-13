@@ -1,8 +1,6 @@
 package cs112.ud2.controllers;
 
-import cs112.ud2.models.BankSystem;
-import cs112.ud2.models.Checkings;
-import cs112.ud2.models.Savings;
+import cs112.ud2.models.*;
 import cs112.ud2.MainApplication;
 import cs112.ud2.models.BankSystem;
 import cs112.ud2.models.Checkings;
@@ -17,12 +15,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.util.Scanner;
 
 import java.io.IOException;
 
 public class CreateAccController {
     static BankSystem[] users = new BankSystem[50];
     static int count = 0;
+    static Scanner scanner = new Scanner(System.in);
     @FXML
     private TextField nameTextLabel;
     @FXML
@@ -121,8 +121,41 @@ public class CreateAccController {
         users[count - 2].setAddress(address);
         users[count - 1].setAddress(address);
         //exception (4 digits only and must be INT)
-        users[count - 2].setSsn(ssn);
-        users[count - 1].setSsn(ssn);
+
+        if (!BankSystem.validSsn(ssn)){
+        System.out.println ("ERROR: Invalid SSN digits, please only enter last 4 digits of Social Security Number");
+        } else {
+            try{
+                int ssnNumber = scanner.nextInt();
+                throw new InputMismatchException("Please enter only integers");
+            } catch (InputMismatchException e){
+                e.getMessage();
+            }
+            users[count - 2].setSsn(ssn);
+            users[count - 1].setSsn(ssn);
+        }
+        /*
+        boolean invalidSsn = false, validSsn = false;
+        while (invalidSsn){
+            try {
+            if (ssn != users[count - 2].getSsn() && ssn != users[count - 1].getSsn()) {
+                throw new InvalidSSNFormatException("Error: Please only provide your 4 last digits of your SSN") {
+
+                } catch (InvalidSSNFormatException Object invalidSSN) {
+                System.out.println (invalidSsn);
+                return;
+
+                }
+            }
+                validSsn = true;
+                users[count - 2].setSsn(ssn);
+                users[count - 1].setSsn(ssn);
+
+
+
+            }
+        }
+*/
         //exception (must be double)
         ((Checkings) users[count - 2]).setCheckingsAmount(checkingsAmount);
         ((Savings) users[count - 1]).setSavingsAmount(savingsAmount);
@@ -151,7 +184,6 @@ public class CreateAccController {
     public static int age(String birthday) { //age calculation
         int YEAR = 2024;
         int MONTH =12;
-        //10/03/2006
         //calculate age
         String stringYear = birthday.substring(6, 10);
         String stringMonth = birthday.substring (0,2);

@@ -202,9 +202,17 @@ public abstract class BankSystem {
 
     }
 
+    //OTHER METHODS
+    public static boolean validSsn (int ssn){
+        if (ssn ==4 ) {
+            return true;
+        } else{
+            return false;
+        }
+    }
 
     /*
-    //OTHER METHODS
+
     public void checkingsWidthraw(double amount) {
         double withdrawAmount = amount;
         checkingsAmount -= withdrawAmount;
