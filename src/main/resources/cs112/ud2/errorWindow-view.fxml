@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.ud2.controllers.ErrorWindowController">
+   <children>
+      <Label fx:id="errorMessage" layoutX="119.0" layoutY="53.0" text="ERROR">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="continueButton" layoutX="110.0" layoutY="200.0" mnemonicParsing="false" onAction="#onContinueButtonClicked" text="Continue" />
+      <Label layoutX="15.0" layoutY="125.0" text="Please make sure to not leave any of the fields blank" />
+      <Label layoutX="20.0" layoutY="150.0" text="and please make sure to follow instructions stated" />
+   </children>
+</AnchorPane>
