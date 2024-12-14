@@ -1,6 +1,9 @@
 package cs112.ud2.controllers;
 
 import cs112.ud2.MainApplication;
+import cs112.ud2.models.BankSystem;
+import cs112.ud2.models.Checkings;
+import cs112.ud2.models.Savings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +14,9 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static cs112.ud2.controllers.CreateAccController.count;
+import static cs112.ud2.controllers.CreateAccController.users;
 
 public class HomepageController {
     @FXML
@@ -50,6 +56,24 @@ public class HomepageController {
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(transferMoneyViewScene);
         window.show();
+
+    }
+
+    //onViewAccDetailsButtonClicked
+    @FXML
+    protected void onViewAccDetailsButtonClicked(ActionEvent actionEvent) throws IOException {
+        //Parent viewAccDetailsView =  FXMLLoader.load(MainApplication.class.getResource("viewAccDetails-view.fxml"));
+        FXMLLoader loader= new FXMLLoader(MainApplication.class.getResource("viewAccDetails-view.fxml"));
+        Parent viewAccDetailsView = loader.load();
+        ViewAccDetailsController controller = loader.getController();
+        controller.displayAccDetails(((Checkings)users[count-2]).getName(), ((Checkings)users[count-2]).getAccType(), ((Checkings) users[count - 2]).getTotalCheckingsAmount(), ((Savings)users[count-1]).getTotalSavingsAmount());
+
+        Scene viewAccDetailsViewScene = new Scene(viewAccDetailsView);
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(viewAccDetailsViewScene);
+        window.show();
+
+
 
     }
 
