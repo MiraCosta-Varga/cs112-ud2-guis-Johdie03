@@ -58,51 +58,120 @@ public class CreateAccController {
         String password = passwordTextField.getText();
         String address = addressTextField.getText();
         String ssnText = ssnTextField.getText();
+        String checkingsAmountText = checkingsTextField.getText();
+        String savingsAmountText = savingsTextField.getText();
+        String accType = accTypeTextField.getText();
         //only accept int
         //int ssn = Integer.parseInt(ssnTextField.getText());
-        int TempSsn = 0;
+         double checkingsAmount = 0;
+         double savingsAmount = 0;
+         checkingsAmount = Double.parseDouble(checkingsAmountText);
+         savingsAmount = Double.parseDouble(savingsAmountText);
+        int TempSsn;
         int ssn = 0;
-        try {
-            TempSsn = Integer.parseInt(ssnText);
-            if (ssnText.length() != 4) {
-                throw new IllegalArgumentException("Please only enter your last 4 digits of your SSN");
-                /*
-                Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
-                Scene accCreatedViewScene = new Scene(accCreatedView);
-                Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                window.setScene(accCreatedViewScene);
-                window.show();
-                */
+        TempSsn = Integer.parseInt(ssnText);
 
-            }
-            System.out.println("Valid SSN: " + TempSsn);
-
-        } catch (NumberFormatException ex) {
-            System.out.println("ERROR: Please only enter integers" + ex.getMessage());
-        } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
-
+        if (ssnText.length() != 4) {
+            throw new IllegalArgumentException("Please only enter your last 4 digits of your SSN");
         }
-        double checkingsAmount = Double.parseDouble(checkingsTextField.getText());
-        double savingsAmount = Double.parseDouble(savingsTextField.getText());
-        String accType = accTypeTextField.getText();
+
+        System.out.println("Valid SSN: " + TempSsn);
+
         users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
                 checkingsAmount);
         users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
 
         users[count - 2].setSsn(TempSsn);
         users[count - 1].setSsn(TempSsn);
+
         System.out.println(users[count - 2].getSsn() + "\n" + users[count - 1].getSsn());
 
+        //checking if fields are empty
 
-        Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
-        Scene accCreatedViewScene = new Scene(accCreatedView);
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window.setScene(accCreatedViewScene);
-        window.show();
+        if (nameTextLabel.getText().isEmpty() || emailTextField.getText().isEmpty() || dobTextField.getText().isEmpty() || passwordTextField.getText().isEmpty() || addressTextField.getText().isEmpty() || ssnTextField.getText().isEmpty() || checkingsTextField.getText().isEmpty() || savingsTextField.getText().isEmpty() || accTypeTextField.getText().isEmpty()) {
 
-        CreateAccController.setAll(users, name, email, birthday, password, address, ssn, checkingsAmount, savingsAmount, accType);
+            Parent errorWindowView = FXMLLoader.load(MainApplication.class.getResource("errorWindow-view.fxml"));
+            Scene errorWindowViewScene = new Scene(errorWindowView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(errorWindowViewScene);
+            window.show();
+        } else {
 
+
+            Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
+            Scene accCreatedViewScene = new Scene(accCreatedView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(accCreatedViewScene);
+            window.show();
+        }
+
+
+        if(!validateFields()){
+            try{
+                Parent errorWindowView = FXMLLoader.load(MainApplication.class.getResource("errorWindow-view.fxml"));
+                Scene errorWindowViewScene = new Scene(errorWindowView);
+                Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window.setScene(errorWindowViewScene);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else{
+            CreateAccController.setAll(users, name, email, birthday, password, address, ssn, checkingsAmount, savingsAmount, accType);
+            Parent accCreatedView = FXMLLoader.load(MainApplication.class.getResource("accCreated-view.fxml"));
+            Scene accCreatedViewScene = new Scene(accCreatedView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(accCreatedViewScene);
+            window.show();
+            System.out.println(users[count - 2].toString());
+            System.out.println(users[count - 1].toString());
+        }
+
+    }
+    private boolean validateFields () {
+            if (nameTextLabel.getText().isBlank()) {
+                throw new IllegalArgumentException("Please make sure the Name field isn't left blank");
+
+            }
+            if (emailTextField.getText().isBlank()) {
+                throw new IllegalArgumentException("Please make sure the Email field isn't left blank");
+            }
+            if (dobTextField.getText().isBlank()) {
+                throw new IllegalArgumentException("Please make sure the Date of Birth field isn't left blank");
+            }
+            if (passwordTextField.getText().isBlank()) {
+                throw new IllegalArgumentException("Please make sure the Password field isn't left blank");
+            }
+            if (addressTextField.getText().isBlank()) {
+                throw new IllegalArgumentException("Please make sure the Address field isn't left blank");
+            }
+            try {
+                if (ssnTextField.getText().length() != 4) {
+                    throw new IllegalArgumentException("Please enter your last 4 digits of your SSN");
+                }
+            } catch (NumberFormatException ex) {
+            System.out.println("ERROR: Please only enter integers" + ex.getMessage());
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
+
+    }
+
+        //Error message
+        /*
+        String message = null;
+        private void errorWindow(String message){
+            ErrorWindowController.setErrorMessage(null);
+            Parent errorWindowView = FXMLLoader.load(MainApplication.class.getResource("errorWindow-view.fxml"));
+            Scene errorWindowViewScene = new Scene(errorWindowView);
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(errorWindowViewScene);
+            window.show();
+
+        }
+*/
 
         //TEST
         /*
@@ -112,7 +181,7 @@ public class CreateAccController {
         System.out.println (test1.toString());
         System.out.println (test2.toString());
     */
-    }
+
 
     //onBackButtonClickedButton
     @FXML
@@ -170,6 +239,7 @@ public class CreateAccController {
         users[count - 2].setAddress(address);
         users[count - 1].setAddress(address);
         //exception (4 digits only and must be INT)
+
 
         users[count - 2].setSsn(ssn);
         users[count - 1].setSsn(ssn);
