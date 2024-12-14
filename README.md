@@ -5,6 +5,11 @@ Feel free to edit this file to contain a description of your project, as well as
 
 Use [Markdown](https://gist.github.com/cuonggt/9b7d08a597b167299f0d) to format appropriately.
 
+## Bank System
+This project has a similar concept to my previous capstone project from cs 111.
+I wanted to see the Bank System I previously made as an actual interface (it was previously just from the terminal).
+Which is why I made the decision to extend the project and integrate more actions, applying what I've learned from this course.
+
 ## GUI Wireframe
 GUI Wireframe Images
 WireFrame Version 1
@@ -19,7 +24,21 @@ WireFrame Version 2
 UML Diagram Image
 ![UML Image 1](./main/resources/images/UMLDIAGRAM.png)
 
+## Short Overviews
+Creating an Account
+![GIF1](./main/resources/images/UDProject-CreatingAnAcc.gif)
 
+Error with account creation (field left blank)
+![GIF5](./main/resources/images/UDProject-failedToCreatAnAcc.gif) 
+
+Depositing Money
+![GIF2](./main/resources/images/UDProject-depositing.gif)
+
+Withdrawing Money
+![GIF3](./main/resources/images/UDProject-withdrawing.gif)
+
+Transferring Money
+![GIF4](./main/resources/images/UDProject-transfer.gif)
 
 ## Requirements
 Missing: Inner Classes
