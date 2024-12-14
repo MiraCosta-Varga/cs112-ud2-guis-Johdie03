@@ -7,5 +7,23 @@ Use [Markdown](https://gist.github.com/cuonggt/9b7d08a597b167299f0d) to format a
 
 ## GUI Wireframe
 GUI Wireframe Images
+WireFrame Version 1
 ![Wireframe Image 1](./main/resources/images/UD2-Wireframe-1.jpg)
 ![Wireframe Image 1](./main/resources/images/UD2-Wireframe-2.jpg)
+
+WireFrame Version 2
+![Wireframe Image 1](./main/resources/images/Wireframe-1.jpg)
+![Wireframe Image 1](./main/resources/images/Wireframe-2.jpg)
+
+## UML Diagram
+UML Diagram Image
+![UML Image 1](./main/resources/images/UMLDIAGRAM.png)
+
+
+
+## Requirements
+Missing: Inner Classes
+ 
+Didn't need it for this particular project as I was directly calling the variables and setting them also was calling variables/fields often which may not be suitable to use inner class for.
+
+

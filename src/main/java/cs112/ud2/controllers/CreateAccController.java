@@ -51,7 +51,7 @@ public class CreateAccController {
 
     //onContinueButtonClicked
     @FXML
-    protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException {
+    protected void onContinueButtonClicked(ActionEvent actionEvent) throws IOException, AgeRequirementException {
         String name = nameTextLabel.getText();
         String email = emailTextField.getText();
         String birthday = dobTextField.getText();
@@ -63,8 +63,8 @@ public class CreateAccController {
         String accType = accTypeTextField.getText();
         //only accept int
         //int ssn = Integer.parseInt(ssnTextField.getText());
-         double checkingsAmount = 0;
-         double savingsAmount = 0;
+         double checkingsAmount;
+         double savingsAmount;
          checkingsAmount = Double.parseDouble(checkingsAmountText);
          savingsAmount = Double.parseDouble(savingsAmountText);
         int TempSsn;
@@ -213,7 +213,7 @@ public class CreateAccController {
     */
 
 
-    public static String setAll(BankSystem[] users, String name, String email, String birthday, String password, String address, int ssn, double checkingsAmount, double savingsAmount, String accType){
+    public static String setAll(BankSystem[] users, String name, String email, String birthday, String password, String address, int ssn, double checkingsAmount, double savingsAmount, String accType) throws AgeRequirementException {
 //        users[count++] = new Checkings(name, email, password, address, birthday, ssn, accType,
 //                checkingsAmount);
 //        users[count++] = new Savings(name, email, password, address, birthday, ssn, accType, savingsAmount);
@@ -227,12 +227,21 @@ public class CreateAccController {
 
         //exceptions (must be 18 or older)
 
+            if(CreateAccController.age(birthday)<18){
+                throw new AgeRequirementException("Error: You must be 18 or older to create an account");
+            } else{
+                users[count - 2].setBirthday(birthday);
+                users[count - 1].setBirthday(birthday);
+            }
+            /*
         if(CreateAccController.age(birthday)<18){
             System.out.println ("You must be 18 or older to create an account");
+
         }else{
             users[count - 2].setBirthday(birthday);
             users[count - 1].setBirthday(birthday);
         }
+             */
         users[count - 2].setPassword(password);
         users[count - 1].setPassword(password);
 
@@ -273,7 +282,6 @@ public class CreateAccController {
         users[count - 2].setAccType(accType);
         users[count - 1].setAccType(accType);
 
-        //TODO : ADD EXCEPTIONS HERE
 
 
 
